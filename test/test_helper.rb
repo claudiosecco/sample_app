@@ -11,5 +11,8 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
+  # including ApplicationHelper in order to use full_title method in tests
+  include ApplicationHelper
+
   # Add more helper methods to be used by all tests here...
 end

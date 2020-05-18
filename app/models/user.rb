@@ -11,7 +11,9 @@ class User < ApplicationRecord
                     uniqueness: true
 
   has_secure_password
-  validates :password, presence: true, length: {minimum: 6}
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+  # allow_nil only for update purpose. When creating new user,
+  # has_secure_password doesn't allow empty passwords
 
   class << self
     # Returns the hash digest of a given string

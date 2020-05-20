@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',          '6.0.2.2'
 gem 'bcrypt',         '3.1.13', require: true
+gem 'faker',          '2.1.2' # generally, only in dev env
 gem 'bootstrap-sass', '3.4.1'
 gem 'puma',           '4.3.3'
 gem 'sass-rails',     '5.1.0'

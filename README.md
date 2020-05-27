@@ -45,8 +45,8 @@ Set AWS S3 environment variables:
 ```
 $ heroku config:set AWS_ACCESS_KEY_ID=
 $ heroku config:set AWS_SECRET_ACCESS_KEY=
-$ heroku config:set AWS_REGION
-$ heroku config:set AWS_BUCKET
+$ heroku config:set AWS_REGION=
+$ heroku config:set AWS_BUCKET=
 ```
 
 For more information, see the

@@ -38,7 +38,29 @@ If the test suite passes, you'll be ready to run the app in a local server:
 $ rails server
 ```
 
-## Non standard deployment steps
+## Deployment info
+
+This app was made counting on Heroku deployment.
+
+Before pushing to Heroku, find sendgrid configuration in config/environments/production.rb and change line bellow:
+
+```
+host = '<your app>.herokuapp.com'
+```
+
+Standard Heroku steps:
+
+```
+$ heroku create
+$ git push heroku master
+$ heroku run rails db:migrate
+```
+
+Activate sendgrid:
+
+```
+$ heroku addons:create sendgrid:starter
+```
 
 Set AWS S3 environment variables:
 

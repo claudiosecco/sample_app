@@ -44,8 +44,8 @@ Rails.application.configure do
     port:                 587,
     authentication:       "plain",
     enable_starttls_auto: true,
-    user_name:            "noreply4yu2r6@gmail.com",
-    password:             "jisk!GNOH!saib0tap", 
+    user_name:            ENV['NOREPLY_GMAIL_USERNAME'],
+    password:             ENV['NOREPLY_GMAIL_PASSWORD'], 
     domain:               "smtp.gmail.com",
     openssl_verify_mode:  "none",
   }

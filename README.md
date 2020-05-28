@@ -20,6 +20,13 @@ $ bundle install --without production
 $ yarn install --check-files
 ```
 
+Create a .env file in app's root directory and fill in your gmail credentials:
+
+```
+NOREPLY_GMAIL_USERNAME=
+NOREPLY_GMAIL_PASSWORD=
+```
+
 Next, migrate the database:
 
 ```
@@ -42,7 +49,7 @@ $ rails server
 
 This app was made counting on Heroku deployment.
 
-Before pushing to Heroku, find sendgrid configuration in config/environments/production.rb and change line bellow:
+Before pushing to Heroku, find `# MAILER CONFIG` in config/environments/production.rb and change line bellow:
 
 ```
 host = '<your app>.herokuapp.com'
@@ -56,19 +63,15 @@ $ git push heroku master
 $ heroku run rails db:migrate
 ```
 
-Activate sendgrid:
-
-```
-$ heroku addons:create sendgrid:starter
-```
-
-Set AWS S3 environment variables:
+Set environment variables with your AWS S3 and Gmail credentials:
 
 ```
 $ heroku config:set AWS_ACCESS_KEY_ID=
 $ heroku config:set AWS_SECRET_ACCESS_KEY=
 $ heroku config:set AWS_REGION=
 $ heroku config:set AWS_BUCKET=
+$ heroku config:set GMAIL_USERNAME=
+$ heroku config:set GMAIL_PASSWORD=
 ```
 
 For more information, see the

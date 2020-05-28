@@ -75,7 +75,7 @@ Rails.application.configure do
     domain:               'gmail.com',
     user_name:            'financeiroiugu@gmail.com',
     password:             'Tw0jPa5Z',
-    authentication:       :plain,
+    authentication:       :login,
     enable_starttls_auto: true
   }
   #ActionMailer::Base.smtp_settings = {

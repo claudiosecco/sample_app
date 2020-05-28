@@ -60,24 +60,30 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "sample_app_production"
 
-  config.action_mailer.perform_caching = false
-
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  config.action_mailer.raise_delivery_errors = true
-  # SENDGRID CONFIGURATION
-  config.action_mailer.delivery_method = :smtp
+  # MAILER CONFIGS
+  config.action_mailer.perform_deliveries =     true
+  config.action_mailer.raise_delivery_errors =  true
+  config.action_mailer.perform_caching =        false
   host = 'boiling-woodland-55701.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options =    { host: host }
+  config.action_mailer.delivery_method =        :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 '587',
-    domain:               'gmail.com',
-    user_name:            'financeiroiugu@gmail.com',
-    password:             'Tw0jPa5Z',
-    authentication:       :login,
-    enable_starttls_auto: true
+    address:              "smtp.gmail.com",
+    port:                 587,
+    authentication:       "plain",
+    enable_starttls_auto: true,
+    user_name:            "noreply4yu2r6@gmail.com",
+    password:             "jisk!GNOH!saib0tap", 
+    domain:               "smtp.gmail.com",
+    openssl_verify_mode:  "none",
   }
+
+  # SENDGRID CONFIGURATION DEACTIVATED
+  #config.action_mailer.perform_caching = false
+  #config.action_mailer.raise_delivery_errors = true
+  #config.action_mailer.delivery_method = :smtp
+  #host = 'boiling-woodland-55701.herokuapp.com'
+  #config.action_mailer.default_url_options = { host: host }
   #ActionMailer::Base.smtp_settings = {
   #    :address        => 'smtp.sendgrid.net',
   #    :port           => '587',

@@ -28,16 +28,27 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Store uploaded files on the local file system (see config/storage.yml for options).
+  # Store uploaded files on the local file system (see config/storage.yml for 
+  # options).
   config.active_storage.service = :local
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
-  host = 'localhost:3000'
-  config.action_mailer.default_url_options = { host: host, protocol: 'http'}
-
-  config.action_mailer.perform_caching = false
+  # MAILER CONFIGS
+  config.action_mailer.perform_deliveries =     true
+  config.action_mailer.raise_delivery_errors =  true
+  config.action_mailer.perform_caching =        false
+  config.action_mailer.default_url_options =    { host: 'localhost', 
+                                                  port: 3000 }
+  config.action_mailer.delivery_method =        :smtp
+  config.action_mailer.smtp_settings = {
+    address:              "smtp.gmail.com",
+    port:                 587,
+    authentication:       "plain",
+    enable_starttls_auto: true,
+    user_name:            "noreply4yu2r6@gmail.com",
+    password:             "jisk!GNOH!saib0tap", 
+    domain:               "smtp.gmail.com",
+    openssl_verify_mode:  "none",
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

@@ -20,6 +20,7 @@ gem 'jbuilder',                   '2.10.0'
 gem 'bootsnap',                   '1.4.6', require: false
 gem 'dotenv-rails',               groups: [:development, :test]
 gem "actionpack",                 ">= 6.0.3.2"
+gem 'rack',                       '>= 2.2.3'
 
 group :development, :test do
   gem 'sqlite3', '1.4.2'
